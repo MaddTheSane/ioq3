@@ -1,6 +1,8 @@
 #import "ErrorWindow.h"
 
 @implementation ErrorWindow
+@synthesize errorWindow;
+@synthesize errorTextField;
 
 - (void)bitch:(NSString *)errorlog {
 	NSLog(@"%@", errorlog);
