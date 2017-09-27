@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>quake3_flat</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.icculus.quake3</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
