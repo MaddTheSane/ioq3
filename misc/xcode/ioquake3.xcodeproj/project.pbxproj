@@ -110,7 +110,6 @@
 		A163B25A2193AEA100C48278 /* libopus.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A1665973219341DF0086B74B /* libopus.dylib */; };
 		A163B25C2193AF1E00C48278 /* renderer_opengl1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A163B25B2193AF1E00C48278 /* renderer_opengl1.dylib */; };
 		A163B2602193D67700C48278 /* renderer_opengl2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A163B25F2193D67700C48278 /* renderer_opengl2.dylib */; };
-		A16659662191052E0086B74B /* libSDL2main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A16659652191052E0086B74B /* libSDL2main.a */; };
 		A1665968219105430086B74B /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A1665967219105430086B74B /* libSDL2-2.0.0.dylib */; };
 		A1665971219107490086B74B /* sys_autoupdater.c in Sources */ = {isa = PBXBuildFile; fileRef = A1665970219107490086B74B /* sys_autoupdater.c */; };
 		A16659722192A3DD0086B74B /* libSDL2-2.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A1665967219105430086B74B /* libSDL2-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -396,7 +395,6 @@
 				A163B25C2193AF1E00C48278 /* renderer_opengl1.dylib in Frameworks */,
 				A163B25A2193AEA100C48278 /* libopus.dylib in Frameworks */,
 				A1665968219105430086B74B /* libSDL2-2.0.0.dylib in Frameworks */,
-				A16659662191052E0086B74B /* libSDL2main.a in Frameworks */,
 				273531F014D1275D00EB7BD6 /* Cocoa.framework in Frameworks */,
 				2758BB3317905B8F007F6582 /* IOKit.framework in Frameworks */,
 				27AAD06F178E04FF0093DFC0 /* OpenAL.framework in Frameworks */,
@@ -1117,6 +1115,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ioquake3-Prefix.pch";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=arm64]" = (
+					NO_VM_COMPILED,
+					"$(inherited)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../code/jpeg-8c\"",
 					"\"$(SRCROOT)/../../code/opus-1.2.1/include\"",
@@ -1144,6 +1146,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ioquake3-Prefix.pch";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=arm64]" = (
+					NO_VM_COMPILED,
+					"$(inherited)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../code/jpeg-8c\"",
 					"\"$(SRCROOT)/../../code/opus-1.2.1/include\"",
