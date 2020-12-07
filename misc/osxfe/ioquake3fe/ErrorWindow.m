@@ -3,7 +3,7 @@
 @implementation ErrorWindow
 
 - (void)bitch:(NSString *)errorlog {
-	NSLog(errorlog);
+	NSLog(@"%@", errorlog);
 
 	NSNib *nib = [[NSNib alloc] initWithNibNamed:@"ErrorWindow.nib" bundle:[NSBundle mainBundle]];
 	[nib instantiateNibWithOwner:self topLevelObjects:nil];
