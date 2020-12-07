@@ -8,12 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface Controller : NSObject {
-	IBOutlet id		argsTextField;
+@interface Controller : NSObject <NSApplicationDelegate> {
 	NSTask			*quakeTask;
 	NSFileHandle	*quakeOut;
 	NSMutableData	*quakeData;
 }
+@property (assign) IBOutlet NSTextField *argsTextField;
 
 - (IBAction)launch:(id)sender;
 - (void)readPipe:(NSNotification *)note;

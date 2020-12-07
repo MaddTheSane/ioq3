@@ -10,9 +10,11 @@
 #import "ErrorWindow.h"
 
 #define IOQ3_BUNDLE @"/Applications/ioquake3/ioquake3.app"
-#define IOQ3_BIN @"ioquake3.ub"
+#define IOQ3_UB_BIN @"ioquake3.ub"
+#define IOQ3_BIN @"ioquake3"
 
 @implementation Controller
+@synthesize argsTextField;
 
 - (id)init {
 	[super init];
@@ -28,10 +30,36 @@
 }
 
 - (IBAction)launch:(id)sender {
-	NSString *ioQuake3Path = [[NSBundle mainBundle] pathForAuxiliaryExecutable:IOQ3_BIN];
-	if (!ioQuake3Path) 
+	NSString *ioQuake3Path = [[NSBundle mainBundle] pathForAuxiliaryExecutable:IOQ3_UB_BIN];
+	if (!ioQuake3Path)
+		ioQuake3Path = [[NSBundle mainBundle] pathForAuxiliaryExecutable:IOQ3_BIN];
+	if (!ioQuake3Path)
+		ioQuake3Path = [[NSBundle bundleWithPath:IOQ3_BUNDLE] pathForAuxiliaryExecutable:IOQ3_UB_BIN];
+	if (!ioQuake3Path)
 		ioQuake3Path = [[NSBundle bundleWithPath:IOQ3_BUNDLE] pathForAuxiliaryExecutable:IOQ3_BIN];
-		
+
+	if (!ioQuake3Path) {
+		NSArray *copyURLArray = (NSArray *)LSCopyApplicationURLsForBundleIdentifier(CFSTR("org.ioquake3.ioquake3"), NULL);
+		for (NSURL *aPath in copyURLArray) {
+			ioQuake3Path = [[NSBundle bundleWithURL:aPath] pathForAuxiliaryExecutable:IOQ3_UB_BIN];
+			if (!ioQuake3Path) {
+				ioQuake3Path = [[NSBundle bundleWithURL:aPath] pathForAuxiliaryExecutable:IOQ3_BIN];
+			}
+			if (ioQuake3Path) {
+				break;
+			}
+		}
+		[copyURLArray release];
+	}
+	if (!ioQuake3Path) {
+		NSBundle *theBundle = [NSBundle bundleWithURL:[NSURL fileURLWithPath:@"ioquake3.app"]];
+		if (theBundle) {
+			ioQuake3Path = [[NSBundle bundleWithPath:@"ioquake3.app"] pathForAuxiliaryExecutable:IOQ3_UB_BIN];
+			if (!ioQuake3Path) {
+				ioQuake3Path = [[NSBundle bundleWithPath:@"ioquake3.app"] pathForAuxiliaryExecutable:IOQ3_BIN];
+			}
+		}
+	}
 	NSPipe *pipe = [NSPipe pipe];
 	quakeOut = [pipe fileHandleForReading];
 	[quakeOut readInBackgroundAndNotify];
