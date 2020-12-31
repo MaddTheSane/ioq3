@@ -131,7 +131,7 @@
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstSubfolderSpec = 6;
 			files = (
 				55518171257E317E00FBE732 /* libopus.dylib in Embed Libraries */,
 				A16659722192A3DD0086B74B /* libSDL2-2.0.0.dylib in Embed Libraries */,
@@ -1134,7 +1134,6 @@
 					"\"$(BUILT_PRODUCTS_DIR)\"",
 					"\"$(SRCROOT)/../../code/libs/macosx\"",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.ioquake3.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ioquake3;
 				WRAPPER_EXTENSION = app;
@@ -1166,7 +1165,6 @@
 					"\"$(BUILT_PRODUCTS_DIR)\"",
 					"\"$(SRCROOT)/../../code/libs/macosx\"",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.ioquake3.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ioquake3;
 				WRAPPER_EXTENSION = app;
