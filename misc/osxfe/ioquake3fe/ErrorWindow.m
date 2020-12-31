@@ -7,8 +7,8 @@
 - (void)bitch:(NSString *)errorlog {
 	NSLog(@"%@", errorlog);
 
-	NSNib *nib = [[NSNib alloc] initWithNibNamed:@"ErrorWindow.nib" bundle:[NSBundle mainBundle]];
-	[nib instantiateNibWithOwner:self topLevelObjects:nil];
+	NSNib *nib = [[NSNib alloc] initWithNibNamed:@"ErrorWindow" bundle:[NSBundle mainBundle]];
+	[nib instantiateWithOwner:self topLevelObjects:nil];
 	
 	[errorWindow makeKeyWindow];
 	[errorTextField setFont:[NSFont userFixedPitchFontOfSize:12.0]];
