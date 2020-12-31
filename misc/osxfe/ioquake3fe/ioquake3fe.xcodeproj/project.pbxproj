@@ -27,10 +27,10 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* ioquake3fe_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioquake3fe_Prefix.pch; sourceTree = "<group>"; };
-		5551810E257E1C3200FBE732 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ErrorWindow.xib; sourceTree = "<group>"; };
 		5551810F257E1C3200FBE732 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		55518110257E1C3300FBE732 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5551815F257E2E3000FBE732 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		559EB0D5259D993E0001F0E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		559EB0D6259D993E0001F0E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ErrorWindow.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* ioquake3fe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ioquake3fe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30C62160F677DD30043A4E2 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
@@ -170,6 +170,7 @@
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* ioquake3fe */;
 			projectDirPath = "";
@@ -229,7 +230,7 @@
 		C37357850F68280200B1A10C /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				55518110257E1C3300FBE732 /* en */,
+				559EB0D5259D993E0001F0E8 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -237,7 +238,7 @@
 		C37357870F68280200B1A10C /* ErrorWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5551810E257E1C3200FBE732 /* en */,
+				559EB0D6259D993E0001F0E8 /* Base */,
 			);
 			name = ErrorWindow.xib;
 			sourceTree = "<group>";
