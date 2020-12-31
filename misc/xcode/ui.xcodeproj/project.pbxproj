@@ -77,9 +77,11 @@
 				2772B8221790EDA7004CCF57 /* renderercommon */,
 				2772B8111790ED78004CCF57 /* ui */,
 			);
+			indentWidth = 2;
 			name = code;
 			path = ../../code;
 			sourceTree = SOURCE_ROOT;
+			tabWidth = 2;
 		};
 		2772B8111790ED78004CCF57 /* ui */ = {
 			isa = PBXGroup;
