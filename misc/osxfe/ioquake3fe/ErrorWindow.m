@@ -13,7 +13,7 @@
 	[errorWindow makeKeyWindow];
 	[errorTextField setFont:[NSFont userFixedPitchFontOfSize:12.0]];
 	[errorTextField setString:@""];
-	[[errorTextField textStorage] appendAttributedString:[[[NSAttributedString alloc] initWithString:errorlog] autorelease]];
+	[[errorTextField textStorage] appendAttributedString:[[NSAttributedString alloc] initWithString:errorlog]];
     [errorTextField scrollRangeToVisible:NSMakeRange([[errorTextField string] length], 0)];
 }
 

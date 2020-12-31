@@ -17,16 +17,16 @@
 @synthesize argsTextField;
 
 - (id)init {
-	[super init];
+	if (self = [super init]) {
 	quakeData = [[NSMutableData alloc] initWithCapacity:1.0];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(readPipe:) name:NSFileHandleReadCompletionNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskNote:) name:NSTaskDidTerminateNotification object:nil];
+	}
 	return self;
 }
 
 - (void)dealloc {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[super dealloc];
 }
 
 - (IBAction)launch:(id)sender {
@@ -39,7 +39,7 @@
 		ioQuake3Path = [[NSBundle bundleWithPath:IOQ3_BUNDLE] pathForAuxiliaryExecutable:IOQ3_BIN];
 
 	if (!ioQuake3Path) {
-		NSArray *copyURLArray = (NSArray *)LSCopyApplicationURLsForBundleIdentifier(CFSTR("org.ioquake3.ioquake3"), NULL);
+		NSArray *copyURLArray = CFBridgingRelease(LSCopyApplicationURLsForBundleIdentifier(CFSTR("org.ioquake3.ioquake3"), NULL));
 		for (NSURL *aPath in copyURLArray) {
 			ioQuake3Path = [[NSBundle bundleWithURL:aPath] pathForAuxiliaryExecutable:IOQ3_UB_BIN];
 			if (!ioQuake3Path) {
@@ -49,7 +49,6 @@
 				break;
 			}
 		}
-		[copyURLArray release];
 	}
 	if (!ioQuake3Path) {
 		NSBundle *theBundle = [NSBundle bundleWithURL:[NSURL fileURLWithPath:@"ioquake3.app"]];
@@ -114,8 +113,8 @@
 	if ([note object] == quakeTask) {
 		if ([quakeTask isRunning] == NO) {
 			if ([quakeTask terminationStatus] != 0) {
-				ErrorWindow *ew = [[[ErrorWindow alloc] init] autorelease];
-				[ew bitch:[[[NSString alloc] initWithData:quakeData encoding:NSUTF8StringEncoding] autorelease]];
+				ErrorWindow *ew = [[ErrorWindow alloc] init];
+				[ew bitch:[[NSString alloc] initWithData:quakeData encoding:NSUTF8StringEncoding]];
 			} 
 			else
 				[NSApp terminate:self];
