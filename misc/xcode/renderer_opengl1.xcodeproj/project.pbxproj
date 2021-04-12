@@ -82,7 +82,6 @@
 		274FAC60178FB14500B17C7A /* q_shared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = q_shared.h; sourceTree = "<group>"; };
 		274FAC61178FB14500B17C7A /* qcommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qcommon.h; sourceTree = "<group>"; };
 		274FAC6A178FB17E00B17C7A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		274FAC6C178FB19200B17C7A /* libSDL-1.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL-1.2.0.dylib"; path = "../../code/libs/macosx/libSDL-1.2.0.dylib"; sourceTree = SOURCE_ROOT; };
 		274FAC6F178FB1C800B17C7A /* iqm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iqm.h; sourceTree = "<group>"; };
 		274FAC70178FB1C800B17C7A /* qgl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qgl.h; sourceTree = "<group>"; };
 		274FAC71178FB1C800B17C7A /* tr_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tr_common.h; sourceTree = "<group>"; };
@@ -118,7 +117,6 @@
 			children = (
 				274FAC24178FAF3900B17C7A /* code */,
 				274FAC68178FB15500B17C7A /* Frameworks */,
-				274FAC69178FB15C00B17C7A /* Libraries */,
 				274FAC0E178FAEFC00B17C7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -199,19 +197,11 @@
 		274FAC68178FB15500B17C7A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				274FAC87178FB1D600B17C7A /* libjpeg8.a */,
 				A163B25D2193D5F800C48278 /* libSDL2-2.0.0.dylib */,
 				274FAC6A178FB17E00B17C7A /* OpenGL.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		274FAC69178FB15C00B17C7A /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				274FAC87178FB1D600B17C7A /* libjpeg8.a */,
-				274FAC6C178FB19200B17C7A /* libSDL-1.2.0.dylib */,
-			);
-			name = Libraries;
 			sourceTree = "<group>";
 		};
 		274FAC6E178FB1AE00B17C7A /* renderercommon */ = {
